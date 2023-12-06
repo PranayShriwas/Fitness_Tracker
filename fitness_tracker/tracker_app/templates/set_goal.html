@@ -1,0 +1,9 @@
+<!-- tracker_app/templates/tracker_app/set_goal.html -->
+<h1>Set Your Fitness Goal</h1>
+<form method="post" action="{% url 'set_goal' %}">
+    {% csrf_token %}
+    <label for="target_weight">Target Weight:</label>
+    <input type="number" name="target_weight" step="any" required><br>
+
+    <input type="submit" value="Set Goal">
+</form>

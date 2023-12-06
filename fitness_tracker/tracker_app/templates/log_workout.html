@@ -1,0 +1,19 @@
+<!-- tracker_app/templates/tracker_app/log_workout.html -->
+<h1>Log a Workout</h1>
+<form method="post" action="{% url 'log_workout' %}">
+    {% csrf_token %}
+    <label for="exercise">Exercise:</label>
+    <select name="exercise" required>
+        {% for exercise in exercises %}
+            <option value="{{ exercise.id }}">{{ exercise.name }}</option>
+        {% endfor %}
+    </select><br>
+
+    <label for="duration">Duration (minutes):</label>
+    <input type="number" name="duration" required><br>
+
+    <label for="date">Date:</label>
+    <input type="date" name="date" required><br>
+
+    <input type="submit" value="Log Workout">
+</form>

@@ -1,0 +1,16 @@
+<h1>Welcome to the Fitness Tracker</h1>
+
+<h2>Workouts</h2>
+<ul>
+    {% for workout in workouts %}
+        <li>{{ workout.date }} - {{ workout.exercise.name }} - {{ workout.duration }} minutes</li>
+    {% endfor %}
+</ul>
+
+<h2>Goals</h2>
+{% for goal in goals %}
+    <p>Your target weight: {{ goal.target_weight }}</p>
+{% endfor %}
+
+<a href="{% url 'log_workout' %}">Log Workout</a>
+<a href="{% url 'set_goal' %}">Set Goal</a>
